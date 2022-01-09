@@ -3,3 +3,6 @@ This contains files/codes for my Data Visualization projects and reports created
 
 ### Files
 Each folder contains the dataset(in xlsx or csv format), the dashboard (in pbix), and the dashboard converted into pdf format.
+
+
+## Sales Insights for the same dataset with Tableau, also done in Power Bi
