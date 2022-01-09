@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Readinghood-cart</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+	<div class="search_bar clearfix">
+		<a href="/index/" class="logo fl"><img src="/static/images/readinghood.jpg"></a>
+		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;Shopping cart</div>
+	</div>
+
+	<div class="total_count">Total Books<em>{{ cart_books_count }}</em>items</div>
+	<ul class="cart_list_th clearfix">
+		<li class="col01">Book name</li>
+		<li class="col03">Book price</li>
+		<li class="col04">Count</li>
+		<li class="col05">Sum</li>
+		<li class="col06">Operation</li>
+	</ul>
+
+    {% for cart_books in cart_books_list%}
+	<ul class="cart_list_td clearfix">
+		<li class="col01"></li>
+		<li class="col02"><img src="/static/{{ cart_books.books_img}}"></li>
+		<li class="col03">{{ cart_books.books_name}}<br><em>{{ cart_books.books_price }}</em></li>
+
+		<li class="col05">{{ cart_books.books_price }}</li>
+		<li class="col06">{{ cart_books.books_num }}</li>
+		<li class="col07">{{ cart_books.total_money }}</li>
+		<li class="col08"><a href="/cart/remove_cart/?id={{ cart_books.id }}">delete</a></li>
+	</ul>
+    {% endfor %}
+
+    
+
+	<ul class="settlements">
+		<li class="col01">.</li>
+		<li class="col02">.</li>
+		<li class="col03">Total(without delivery fee)：<span>$</span><em>{{ cart_books_money }}</em><br>共计<b>{{ cart_books_count }}</b>items</li>
+		<li class="col04"><a href="/cart/place_order/">Payment</a></li>
+	</ul>
+
+<!--	<div class="footer">-->
+<!--		<div class="foot_link">-->
+<!--			<a href="#">关于我们</a>-->
+<!--			<span>|</span>-->
+<!--			<a href="#">联系我们</a>-->
+<!--			<span>|</span>-->
+<!--			<a href="#">招聘人才</a>-->
+<!--			<span>|</span>-->
+<!--			<a href="#">友情链接</a>		-->
+<!--		</div>-->
+<!--		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>-->
+<!--		<p>电话：010-****888    京ICP备*******8号</p>-->
+<!--	</div>-->
+	
+
+</body>
+</html>

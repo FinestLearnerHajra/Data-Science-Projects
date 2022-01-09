@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\feed",
+    "\\feed\\templates",
+    "\\feed\\templates\\feed",
+    "\\readinghood",
+    "\\templates",
+    "\\templates\\search",
+    "\\users",
+    "\\users\\templates",
+    "\\users\\templates\\users"
+  ],
+  "SelectedNode": "\\users\\models.py",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://dl.dropboxusercontent.com/s/ecyb1drs5j1jyjf/styles.css?dl=0"
+    />
+    {% block cssfiles %}{% endblock cssfiles %}
+    <title>Readinghood</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand ml-4 mr-4" href="#"><b>Readinghood</b></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="{% url 'home' %}">Community</a>
+          <a class="nav-item nav-link" href="{% url 'users_list' %}"
+            >Add New Friends</a
+          >
+          {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'friend_list' %}"
+            >Friends</a
+          >
+          <a class="nav-item nav-link" href="{% url 'my_profile' %}">Profile</a>
+          <a class="nav-item nav-link" href="{% url 'post-create' %}"
+            >Create Post</a
+          >
+          <a
+            class="nav-item nav-link btn btn-danger ml-4 text-light"
+            href="{% url 'logout' %}"
+            >Logout</a
+          >
+          {% else %}
+          <a
+            class="nav-item nav-link btn btn-success ml-4 text-light"
+            href="{% url 'login' %}"
+            >Login</a
+          >
+          <a
+            class="nav-item nav-link btn btn-info ml-3 text-light"
+            href="{% url 'register' %} "
+            >Register</a
+          >
+          {% endif %} {% block searchform %}{% endblock searchform %}
+        </div>
+      </div>
+    </nav>
+    <div class="container">{% block content %}{% endblock content %}</div>
+
+<!--    <footer class="page-footer font-small black">-->
+<!--      <div class="footer-copyright text-center py-3">-->
+<!--        Readinghood <br /><small class="text-muted"-->
+<!--          ></small-->
+<!--        >-->
+<!--      </div>-->
+<!--    </footer>-->
+
+    <!-- JS Files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    {% block jsfiles %}{% endblock jsfiles %}
+  </body>
+</html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Readinghood-Landing</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/js/slide.js"></script>
+</head>
+<body>
+	<div class="search_bar clearfix">
+        <div class="search_con fl">
+            <form method="get" action="/search">
+                <input type="text" class="input_text fl" name="q" placeholder="Search by title or author">
+                <input type="submit" class="input_btn fr" name="" value="search">
+            </form>
+        </div>
+		<div class="guest_cart fr">
+			<a href="/cart/show_cart/" class="cart_name fl">Shopping Cart</a>
+			<div class="goods_count fl">{{ cart_books_count }}</div>
+			<ul class="cart_goods_show">
+				{% for cart_books in cart_books_list%}
+				<li>
+					<img src="/static/{{ cart_books.books_img }}" alt="商品图片">
+						{{ cart_books.books_name }}
+					<div>{{ cart_books.books_num}}</div>
+				</li>
+				{% endfor %}
+<!--				<li>-->
+<!--					<img src="goods/15180585610380106.jpg" alt="商品图片">-->
+<!--					北洋海产North Shore Fishery 原味鱼丸 227g-->
+<!--					<div>1</div>-->
+<!--				</li>-->
+
+<!--				<li>-->
+<!--					<img src="goods/15180585610360105.jpg" alt="商品图片">-->
+<!--					爱吃鱼 698款海鲜礼券 3.7kg-->
+<!--					<div>1</div>-->
+<!--				</li>-->
+
+
+			</ul>
+
+		</div>
+	</div>
+
+	<div class="navbar_con">
+		<div class="navbar">
+			<h1 class="fl">Books Category</h1>
+		</div>
+	</div>
+
+
+{% for cag in categories %}
+
+	<div class="list_model">
+		<div class="list_title clearfix">
+			<h3 class="fl" id="model01">{{ cag.category_name }}</h3>
+			<a href="/goods/?cag={{ cag.id }}&amp;page=1" class="goods_more fr" id="fruit_more">more &gt;</a>
+		</div>
+
+		<div class="goods_con clearfix">
+<!--			<div class="goods_banner fl"><img src="images/banner01.jpg"></div>-->
+			<ul class="goods_list fl">
+				{% for books in cag.books_list %}
+
+				<li>
+					<h4><a href="/detail/?id={{ books.id }}">{{ books.books_name}}</a></h4>
+					<a href="/detail/?id={{ books.id}}"><img src="/static/{{ books.books_img }}"></a>
+					<div class="prize">$ {{ books.books_price }}</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endfor %}
+
+</body>
+</html>

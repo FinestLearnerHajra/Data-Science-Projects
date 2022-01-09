@@ -1,0 +1,56 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Readinghood-Place order</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+	<div class="search_bar clearfix">
+		<a href="/index/" class="logo fl"><img src="/static/images/readinghood.jpg"></a>
+		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;Successfully Submitted</div>
+	</div>
+
+
+	<h3 class="common_title">Books list</h3>
+	<div class="common_list_con clearfix">
+		<ul class="goods_list_th clearfix">
+			<li class="col01">Books name</li>
+			<li class="col03">Books price</li>
+			<li class="col04">Count</li>
+			<li class="col05">Sum</li>
+		</ul>
+
+		{% for order_books in order_books_list %}
+		<ul class="goods_list_td clearfix">
+			<li class="col01"></li>
+			<li class="col02"><img src="/static/{{ order_books.books_info.books_img }}" /></li>
+			<li class="col03">{{ order_books.books_info.books_name }}</li>
+			<li class="col05">{{ order_books.books_info.books_price }}</li>
+			<li class="col06">{{ order_books.books_num }}</li>
+			<li class="col07">{{ order_books.total_money }}</li>
+			<li class="col07">{{ order_books.all }}</li>
+		</ul>
+        {% endfor%}
+
+	</div>
+
+
+
+
+    <h3 class="common_title">Total</h3>
+	<div class="common_list_con clearfix">
+		<div class="settle_con">
+			<div class="total_goods_count"><em>{{ total_num }}</em>items，Total<b>{{ total_money }}</b></div>
+			<div class="transit">Delivery fee：<b>10</b></div>
+			<div class="total_pay">Sum：<b>{{ total_money|add:10}}</b></div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
