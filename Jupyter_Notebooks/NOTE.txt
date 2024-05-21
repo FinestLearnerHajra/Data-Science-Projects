@@ -1,0 +1,7 @@
+The order of the lectures can be explained as follows:
+
+- Classes and error handling are done right away, as they are needed in the unittest demo;
+- Unittest comes next
+- Then a couple of 'advanced features' of the core language: lambdas and comprehensions
+- Then SQLite
+- Finally some additional OOP features (which may be skipped if there's no time): encapsulation and inheritance

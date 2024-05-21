@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------
+unit testing (do pytest)
+mock module:
+	https://www.toptal.com/python/an-introduction-to-mocking-in-python
+
+When to use mock - These are cases that you may consider using mocks:
+
+System calls
+Networking
+I/O operation
+Clocks & time, timezones
+Or other cases whose results are unpredictable
+
+Why using mocks - The following are benefits of mocks:
+
+Speed up the test
+Exclude external redundancies
+Make unpredictable results predictable
+
+--------------------------------------------------------------------------
+
+SQLite (add description of MVC model; mention API calls;
+        motivating example for dynamic binding; authentication?)
+
+Flask (web development)
+
+Inheritance, polymorphism, abstraction 
+(they may be separated in a special OOP module, along with encapsulation;
+but basic class definitions have to remain in week 2, due to dependencies;
+the OOP module can be made available for LPs, special programs, etc...)
+
+MatplotLib
+Seaborn
+(matplotlib can go in the same module as numpy and pandas, 
+but for seaborn there may not be enough time...; 
+maybe we can have a machine learning specialization and
+include it there)
