@@ -18,6 +18,26 @@ A full-stack recommender system that personalises product suggestions across cat
 *Python, Django, SQL.* Built as my UNSW capstone project (COMP9900, Distinction).
 `/Ecommerce-RecommenderCommunityApp-Final Project`
 
+# Restaurant Margin & COGS Analysis
+
+A small analytics project exploring **gross margin, COGS %, product profitability, menu mix, and channel/promotion impact** for a fictional quick-service restaurant group.
+
+> **Data note:** built on a **synthetic sample dataset** generated inside the notebook (no real company data). It mirrors the shape of real point-of-sale data, so the same analysis runs on a real export.
+
+## What it covers
+- Overall **gross margin** and how much revenue is lost to **COGS** and **delivery channel fees**
+- **Product profitability** — gross margin % and total gross profit by menu item
+- **Menu mix** — each item's share of revenue vs share of profit (spotting low-margin volume)
+- **Channel margin** — dine-in vs delivery once commission fees apply
+- **Promotion impact** — the volume-vs-margin trade-off
+
+## Tools
+Python, Pandas, Matplotlib (Jupyter notebook).
+
+## Files
+- `Restaurant_Margin_COGS_Analysis.ipynb` — the full analysis with charts and commentary.
+
+
 ### Machine Learning & Deep Learning
 A collection of supervised and unsupervised projects — classification, regression, ensemble learning and predictive modelling.
 *Python, scikit-learn, Pandas.*
