@@ -8,9 +8,7 @@ Most projects are in Python (Jupyter notebooks); dashboards are built in Power B
 
 ## Featured work
 
-### Data Visualisation & Dashboards
-Interactive dashboards built from real datasets, focused on turning numbers into clear, decision-ready stories.
-- **FAA Wildlife Strikes** (`FAA STRIKES.pbix`) — Power BI dashboard analysing aircraft strike patterns by location, time, species and operator.
+
 - **Sales Insights dashboards** — Power BI and Tableau reports built from sales datasets (`/Data Visualizations`).
 
 ### E-commerce Recommender Web App — *"readinghood"*
