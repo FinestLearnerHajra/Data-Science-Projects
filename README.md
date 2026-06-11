@@ -16,7 +16,7 @@ A full-stack recommender system that personalises product suggestions across cat
 *Python, Django, SQL.* Built as my UNSW capstone project (COMP9900, Distinction).
 `/Ecommerce-RecommenderCommunityApp-Final Project`
 
-# Restaurant Margin & COGS Analysis
+### Restaurant Margin & COGS Analysis
 
 A small analytics project exploring **gross margin, COGS %, product profitability, menu mix, and channel/promotion impact** for a fictional quick-service restaurant group.
 
