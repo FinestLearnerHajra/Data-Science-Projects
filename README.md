@@ -1,4 +1,4 @@
-# Data Science & Analytics Projects — Hajra Ghafoor
+# Data Science & Analytics Projects 
 
 A portfolio of academic and personal projects spanning **data analysis, visualisation, and machine learning**. The work here covers the full workflow I enjoy most: taking raw, messy data, cleaning and modelling it, and turning it into dashboards, insights, and predictive models that support decisions.
 
